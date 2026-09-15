@@ -9,9 +9,25 @@ namespace Magasin.model
         public string Nom {  get; set; }
         public int Id { get; set; }
         public string Desc { get; set; }
-        public int Prix { get; set; }
+        public double Prix { get; set; }
         public string Type { get; set; }
-        public string Quantite { get; set; }
+        public int Quantite { get; set; }
+
+
+
+        public Item(string nom, int id, string desc, double prix, string type, int quantite)
+        {
+            Nom = nom;
+            Id = id;
+            Desc = desc;
+            Prix = prix;
+            Type = type;
+            Quantite = quantite;
+        }
+
+
+
+
 
 
         public void modifier(string proprety, string changement)
@@ -38,7 +54,10 @@ namespace Magasin.model
                     Type = changement;
                     break;
                 case "quantité":
-                    Quantite = changement;
+                    if (int.TryParse(changement, out int resultatQuan) == true)
+                    {
+                        Quantite = resultatQuan;
+                    }
                     break;
             }
         }

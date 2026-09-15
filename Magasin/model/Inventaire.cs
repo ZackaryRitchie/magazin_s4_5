@@ -6,7 +6,14 @@ namespace Magasin.model
 {
     public class Inventaire
     {
-        public List<Item> ListItems;
+        public List<Item> ListItems { get; set; } = new List<Item>();
+
+
+        public Inventaire(){
+            new Item("douche",212331,"une douche en bois",2599.99,"1",20);
+            new Item("porche 911",412331,"porche 911 avec aucun moteur balenciaga",59.99,"2",2);
+            new Item("banana",212331,"image_une_banane.png",5999.99,"3",6000000);
+        }
 
 
         public void AjoutItem(Item item)

@@ -6,5 +6,6 @@ namespace Magasin.model
 {
     public class Utilisateur
     {
+        public string Nom {  get; set; }
     }
 }
